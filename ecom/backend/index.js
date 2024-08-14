@@ -10,14 +10,12 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
-// Database Connection With MongoDB
+
 mongoose.connect("mongodb+srv://kowsi:kowsi@cluster0.gnoybvk.mongodb.net/dbecom?retryWrites=true&w=majority&appName=Cluster0").then(()=>{console.log("db is connected")}).catch((e)=>{console.log(e.message)})
 
-// paste your mongoDB Connection string above with password
-// password should not contain '@' special character
 
 
-//Image Storage Engine 
+ 
 const storage = multer.diskStorage({
   destination: './upload/images',
   filename: (req, file, cb) => {
